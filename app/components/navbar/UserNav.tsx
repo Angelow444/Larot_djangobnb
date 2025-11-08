@@ -1,37 +1,38 @@
-import Image from 'next/image';
-import Link from 'next/link';
+'use client';
 
-import SearchFilters from './SearchFilters';
-import UserNav from './UserNav';
-import AddPropertyButton from './AddPropertyButton';
+import { useState } from "react";
 
-const Navbar = () => {
+
+
+const UserNav = () => {
+
+
+    const [isOpen, setIsOpen] = useState(false)
+
     return (
-        <nav className="w-full fixed top-0 left-0 py-6 border-b bg-white z-10">
-            <div className="max-w-[1500px] mx-auto px-6">
-                <div className="flex justify-between items-center">
-                    <Link href="/">
-                        <Image
-                            src="/logo.png"
-                            alt="DjangoBnb logo"
-                            width={180}
-                            height={38}
-                        />
-                    </Link>
+        <div className="p-2 relative inline-block border rounded-full">
+            <button 
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center"
+            >
+                <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
 
-                    <div className="flex space-x-6">
-                        <SearchFilters />
-                    </div>
+                <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg>
+            </button>
 
-                    <div className="flex items-center space-x-6">
-                        <AddPropertyButton />
+            {isOpen && (
+                <div className="w-[220px] absolute top-[60px] right-0 bg-white border rounded-xl shadow-md flex flex-col cursor-pointer">
 
-                        <UserNav />
-                    </div>
+                    
+     
                 </div>
-            </div>
-        </nav>
+            )}
+        </div>
     )
 }
 
-export default Navbar;
+export default UserNav;
