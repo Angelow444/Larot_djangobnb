@@ -30,7 +30,7 @@ const LoginModal = () => {
 
     return (
         <Modal
-            isOpen={false}
+            isOpen={true}
             close={() => {}}
             label="Log in"
             content={content}

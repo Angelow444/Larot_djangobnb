@@ -4,11 +4,11 @@ import { useState } from "react";
 
 import MenuLink from "./MenuLink";
 
-
-
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 
 const UserNav = () => {
+    const loginModal = useLoginModal();
     
     const [isOpen, setIsOpen] = useState(false)
 
@@ -33,7 +33,7 @@ const UserNav = () => {
                         label='Log in'
                         onClick={() => {
                             setIsOpen(false);
-                            
+                            loginModal.open();
                         }}
                     />
 
@@ -41,7 +41,7 @@ const UserNav = () => {
                         label='Sign up'
                         onClick={() => {
                             setIsOpen(false);
-                            
+                            signupModal.open();
                         }}
                     />
                 </div>
