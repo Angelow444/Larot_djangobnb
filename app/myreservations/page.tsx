@@ -56,7 +56,7 @@ const MyReservationsPage = () => {
                     </div>
                 </div>
             </div>
-        </main>
+        </main> 
     )
 }
 
