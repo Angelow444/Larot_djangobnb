@@ -120,7 +120,7 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
                     onClick={sendMessage}
                     className="w-[100px]"
                 />
-            </div>
+            </div> 
         </>
     )
 }
