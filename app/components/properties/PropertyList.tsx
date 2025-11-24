@@ -1,9 +1,9 @@
 'use client';
 
 import { format } from 'date-fns';
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-import PropertyListItem from "./PropertyListItem";
+import { useEffect, useState } from 'react'; 
+import { useSearchParams } from 'next/navigation'; 
+import PropertyListItem from "./PropertyListItem"; 
 import apiService from '@/app/services/apiService';
 import useSearchModal from '@/app/hooks/useSearchModal';
 
@@ -26,13 +26,13 @@ const PropertyList: React.FC<PropertyListProps> = ({
 }) => {
     const params = useSearchParams();
     const searchModal = useSearchModal();
-    const country = searchModal.query.country; 
+    const country = searchModal.query.country;
     const numGuests = searchModal.query.guests;
     const numBathrooms = searchModal.query.bathrooms;
-    const numBedrooms = searchModal.query.bedrooms; 
-    const checkinDate = searchModal.query.checkIn; 
-    const checkoutDate = searchModal.query.checkOut; 
-    const category = searchModal.query.category; 
+    const numBedrooms = searchModal.query.bedrooms;
+    const checkinDate = searchModal.query.checkIn;
+    const checkoutDate = searchModal.query.checkOut;
+    const category = searchModal.query.category;
     const [properties, setProperties] = useState<PropertyType[]>([]);
 
     console.log('searchQUery:', searchModal.query);
