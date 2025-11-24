@@ -28,8 +28,8 @@ const SearchModal = () => {
 
     const closeAndSearch = () => {
         const newSearchQuery: SearchQuery = {
-            country: country?.label,
-            checkIn: dateRange.startDate,
+            country: country?.label, 
+            checkIn: dateRange.startDate, 
             checkOut: dateRange.endDate,
             guests: parseInt(numGuests),
             bedrooms: parseInt(numBedrooms),
