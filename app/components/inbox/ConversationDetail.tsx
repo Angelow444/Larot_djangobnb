@@ -68,14 +68,12 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
 
         setNewMessage('');
 
-        setTimeout(() => {
-            scrollToBottom()
-        }, 50);
+        scrollToBottom();
     }
 
     const scrollToBottom = () => {
         if (messagesDiv.current) {
-            messagesDiv.current.scrollTop = messagesDiv.current.scrollheight;
+            messagesDiv.current.scrollTop = messagesDiv.current.scrollHeight;
         }
     }
 
